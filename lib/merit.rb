@@ -37,15 +37,10 @@ module Merit
     config.app_generators.orm Merit.orm
 
     initializer 'merit.controller' do |app|
-	  puts "$$$$$$$$$$$$$$$$$$$4"
-	  puts Merit.orm
-	  Merit.orm = :mongoid
       if Merit.orm == :active_record
-	    puts 'yes'
         require "merit/models/#{Merit.orm}/sash"
         require "merit/models/#{Merit.orm}/badges_sash"
       elsif Merit.orm == :mongoid
-	    puts 'no'
         require "merit/models/#{Merit.orm}/sash"
       end
 
