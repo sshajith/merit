@@ -12,7 +12,7 @@ module Merit
 
   # Define ORM
   mattr_accessor :orm
-  @@orm = :active_record
+  @@orm = Object.const_defined?('ActiveRecord') ? :active_record : :mongoid
 
   # Define user_model_name
   mattr_accessor :user_model_name
