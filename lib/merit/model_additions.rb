@@ -29,6 +29,7 @@ module Merit
 
   # Create sash if doesn't have
   def create_sash_if_none
+    puts self.to_s
     if self.sash.blank?
       self.sash = Sash.create
       self.save(:validate => false)
